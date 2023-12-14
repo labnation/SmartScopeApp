@@ -5,6 +5,12 @@ To build, run
 ```
 ./script/rebuild.sh -o Linux -c None -clean
 ```
+
+Then run
+```
+mono ./dist/package/Linux/SmartScope/opt/smartscope/SmartScope.exe
+```
+
 It may very well be so that the build fails the first time. Just try a second time. The build system isn't super robust.
 
 Later on, after changing the code, you can build a bit faster with
