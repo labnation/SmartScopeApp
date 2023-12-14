@@ -1,0 +1,18 @@
+[submodule "decoders"]
+	path = decoders
+	url = https://github.com/labnation/decoders.git
+[submodule "DeviceInterface"]
+	path = DeviceInterface
+	url = https://github.com/labnation/DeviceInterface.git
+[submodule "MonoGame"]
+	path = MonoGame
+	url = https://github.com/labnation/MonoGame.git
+[submodule "dropnet"]
+	path = dropnet
+	url = https://github.com/labnation/dropnet.git
+[submodule "Newtonsoft.Json"]
+	path = Newtonsoft.Json
+	url = https://github.com/labnation/Newtonsoft.Json
+[submodule "Decoders"]
+	path = Decoders
+	url = https://github.com/labnation/Decoders

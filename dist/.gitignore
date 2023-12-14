@@ -1,0 +1,9 @@
+*.dmg
+*.apk
+/com.lab-nation.smartscope/
+*.deb
+*.exe
+/SmartScope/
+/package/
+!/bin/md5sums.exe
+!/template/MacOS/.DS_Store

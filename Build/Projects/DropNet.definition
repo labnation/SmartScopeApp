@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ExternalProject Name="DropNet">
+  <Platform Type="Windows">
+    <Project
+		Name="DropNet"
+		Guid="c4388675-36cd-4974-ac7f-61d3932b313a"
+		Path="dropnet/DropNet/DropNet.csproj">
+    </Project>
+  </Platform>
+  <Platform Type="WindowsGL">
+    <Project
+		Name="DropNet"
+		Guid="c4388675-36cd-4974-ac7f-61d3932b313a"
+		Path="dropnet/DropNet/DropNet.csproj">
+    </Project>
+  </Platform>  
+  <Platform Type="MacOS">
+    <Project
+		Name="DropNet"
+		Guid="c4388675-36cd-4974-ac7f-61d3932b313a"
+		Path="dropnet/DropNet/DropNet.csproj">
+    </Project>
+  </Platform>
+  <Platform Type="Android">
+    <Project
+  		Name="DropNet.Android"
+  		Guid="D8997231-2351-4D8E-B263-7AA8D94FAF63"
+      Path="dropnet/DropNet/DropNet.Android.csproj" />
+    <Project
+      Name="RestSharp.Android"
+      Guid="1B662C38-984F-4B6A-89B5-AFF7FCBE43A2"
+      Path="dropnet/RestSharp/RestSharp.Android/RestSharp.Android.csproj" />
+  </Platform>
+  <Platform Type="iOS">
+    <Project
+		Name="DropNet.MonoTouch"
+		Guid="E9580EFC-6014-4D3B-82A8-5F6D57213CE4"
+		Path="dropnet/DropNet.MonoTouch/DropNet.MonoTouch.csproj">
+    </Project>
+    <Project
+		Name="RestSharp.MonoTouch"
+    Guid="E9A9D1C5-4E06-4D31-9809-A97188C70B2C"
+    Path="dropnet/RestSharp/RestSharp.MonoTouch/RestSharp.MonoTouch.csproj">
+    </Project>
+  </Platform>
+  <Platform Type="Linux">
+    <Project
+		Name="DropNet"
+		Guid="c4388675-36cd-4974-ac7f-61d3932b313a"
+		Path="dropnet/DropNet/DropNet.csproj">
+    </Project>
+  </Platform>
+</ExternalProject>

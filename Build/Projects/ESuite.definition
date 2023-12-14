@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="SmartScope" Path="./" Type="App" Platforms="Android,iOS,Linux,MacOS,Windows,WindowsGL">
+  <Properties>
+    <FrameworkVersions>
+      <Platform Name="Android">
+        <Version>v9.0</Version>
+      </Platform>
+      <Platform Name="Windows">
+        <Version>v4.5</Version>
+      </Platform>
+      <Platform Name="WindowsGL">
+        <Version>v4.0</Version>
+      </Platform>
+      <Platform Name="MacOS">
+        <Version>v4.5</Version>
+      </Platform>
+      <Platform Name="Linux">
+        <Version>v4.5</Version>
+      </Platform>
+    </FrameworkVersions>
+    <RootNamespace>ESuite</RootNamespace>
+    <PlatformSpecificOutputFolder>True</PlatformSpecificOutputFolder>
+    <WindowsApplicationIcon>smartscope.ico</WindowsApplicationIcon>
+    <CustomDefinitions>
+      <Platform Name="Android">TRACE;ANDROID</Platform>
+      <Platform Name="iOS">IOS</Platform>
+      <Platform Name="Linux">TRACE;LINUX</Platform>
+      <Platform Name="MacOS">MONOMAC</Platform>
+      <Platform Name="Windows">TRACE;WINDOWS;DIRECTX</Platform>
+      <Platform Name="WindowsGL">TRACE;WINDOWS</Platform>
+    </CustomDefinitions>
+    <NoWarn>1591</NoWarn>
+  </Properties>
+  <References>
+    <Reference Include="System"/>
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Numerics"/>
+    <Reference Include="System.Xml.Linq"/>
+    <Reference Include="Microsoft.CSharp"/>
+    <Reference Include="System.Runtime.Serialization"/>
+    <Reference Include="System.Data"/>
+    <Reference Include="System.Xml"/>
+    <Reference Include="Newtonsoft.Json"/>
+    <Reference Include="MonoPlatformSpecific"/>
+    <Reference Include="Common"/>
+    <Reference Include="DropNet"/>
+    <Reference Include="DeviceInterface"/>
+    <Reference Include="MatlabFileIO"/>
+    <Reference Include="OpenTK" />
+    <Reference Include="MonoGame.Framework"/>
+    <Reference Include="System.ComponentModel.Composition"/>
+    <Reference Include="LabNationInterfaces"/>
+    <Reference Include="WinFormReferences"/>
+    <Reference Include="Decoders"/>
+    <Reference Include="ESuiteContent" />
+  </References>
+  <Files>
+    <Compile Include="DataProcessors\DataProcessorAverage.cs"/>
+    <Compile Include="DataProcessors\DataProcessorFFT.cs"/>
+    <Compile Include="DataProcessors\DataProcessorInvert.cs"/>
+    <Compile Include="DataProcessors\DataProcessorMath.cs"/>
+    <Compile Include="DataProcessors\DataProcessorMeasurements.cs"/>
+    <Compile Include="DataProcessors\DataProcessorSmartScope.cs"/>
+    <Compile Include="DataProcessors\IDataProcessor.cs"/>
+    <Compile Include="DataProcessors\ProcessorChannels.cs"/>
+    <Compile Include="DataProcessors\DataProcessorDecoder.cs"/>
+    <Compile Include="DataProcessors\DataProcessorETS.cs"/>
+    <Compile Include="DataProcessors\DataProcessorSincTriggering.cs"/>
+    <Compile Include="DataProcessors\DataProcessorDifferenceDetector.cs"/>
+    <Compile Include="DataStorage\DropboxStorage.cs"/>
+    <Compile Include="DataStorage\RecordingHandler.cs"/>
+    <Compile Include="DataStorage\ChannelBuffer.cs"/>
+    <Compile Include="DataStorage\RecordingScope.cs"/>
+    <Compile Include="Drawables\Buttons\EButtonImage.cs"/>
+    <Compile Include="Drawables\Buttons\EButtonImageAndText.cs"/>
+    <Compile Include="Drawables\Buttons\EButtonTextInImage.cs"/>
+    <Compile Include="Drawables\Buttons\EButtonImageAndTextSelectable.cs"/>
+    <Compile Include="Drawables\ContextMenu\EContextMenu.cs"/>
+    <Compile Include="Drawables\ContextMenu\EContextMenuItem.cs"/>
+    <Compile Include="Drawables\ContextMenu\EContextMenuButton.cs"/>
+    <Compile Include="Drawables\ContextMenu\EContextMenuButtonNumpad.cs"/>
+    <Compile Include="Drawables\ContextMenu\EContextMenuDropdown.cs"/>
+    <Compile Include="Drawables\Dialog\EButton.cs"/>
+    <Compile Include="Drawables\Dialog\EDialog.cs"/>
+    <Compile Include="Drawables\Dialog\EDialogButtons.cs"/>
+    <Compile Include="Drawables\Dialog\EDialogProgress.cs"/>
+    <Compile Include="Drawables\Keyboards\EKeyboard.cs"/>
+	<Compile Include="Drawables\Keyboards\EKeyboardNumeric.cs"/>
+	<Compile Include="Drawables\Keyboards\EKeyboardNumericSi.cs"/>
+	<Compile Include="Drawables\Keyboards\EKeyboardAlfa.cs"/>
+	<Compile Include="Drawables\Keyboards\EKeyboardAlfaNumeric.cs"/>
+    <Compile Include="Drawables\EDrawable.cs"/>
+	<Compile Include="Drawables\EForm.cs"/>
+    <Compile Include="Drawables\EToast.cs"/>
+    <Compile Include="Drawables\EGraphicImageBackground.cs"/>
+    <Compile Include="Drawables\ELogBox.cs"/>
+    <Compile Include="Drawables\StringManager.cs"/>
+    <Compile Include="Drawables\GraphArea\BoundaryDefiner.cs"/>
+    <Compile Include="Drawables\GraphArea\Cursors\Cursor.cs"/>
+    <Compile Include="Drawables\GraphArea\Cursors\CursorHorizontal.cs"/>
+    <Compile Include="Drawables\GraphArea\Cursors\CursorVertical.cs"/>
+    <Compile Include="Drawables\GraphArea\Cursors\CursorHorizontalDelta.cs"/>
+    <Compile Include="Drawables\GraphArea\Cursors\CursorVerticalDelta.cs"/>
+    <Compile Include="Drawables\GraphArea\ClippingMask.cs"/>
+    <Compile Include="Drawables\GraphArea\GridDivisionLabel.cs"/>
+    <Compile Include="Drawables\GraphArea\PanoramaShading.cs"/>
+    <Compile Include="Drawables\GraphArea\Panorama.cs"/>
+    <Compile Include="Drawables\GraphArea\PanoramaSplitter.cs"/>
+    <Compile Include="Drawables\GraphArea\Indicators\Indicator.cs"/>
+    <Compile Include="Drawables\GraphArea\Indicators\IndicatorInteractive.cs"/>
+    <Compile Include="Drawables\GraphArea\Indicators\IndicatorInteractiveBound.cs"/>
+    <Compile Include="Drawables\GraphArea\MeasurementBox.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveDataBuffer.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformAnalog.cs"/>
+	<Compile Include="Drawables\GraphArea\Waveform\WaveformMeasurement.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformXY.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformDecoded.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformDigital.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformFreq.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\WaveformReference.cs"/>
+    <Compile Include="Drawables\GraphArea\Waveform\Waveform.cs"/>
+    <Compile Include="Drawables\GraphArea\GraphManager.cs"/>
+	<Compile Include="Drawables\GraphArea\GridLabelPrinter.cs"/>
+    <Compile Include="Drawables\GraphArea\Graphs\Graph.cs"/>
+    <Compile Include="Drawables\GraphArea\Grids\Grid.cs"/>
+    <Compile Include="Drawables\GraphArea\Grids\GridAnalog.cs"/>
+	<Compile Include="Drawables\GraphArea\Grids\GridMeasurement.cs"/>
+    <Compile Include="Drawables\GraphArea\Grids\GridDigital.cs"/>
+    <Compile Include="Drawables\GraphArea\Grids\GridFrequency.cs"/>
+    <Compile Include="Drawables\GraphArea\Grids\GridXY.cs"/>
+    <Compile Include="Drawables\Lerping\LerpingSine.cs"/>
+    <Compile Include="Drawables\Lerping\LerpFloat.cs"/>
+    <Compile Include="Drawables\Lerping\LerpMatrix.cs"/>
+    <Compile Include="Drawables\Lerping\Lerp.cs"/>
+    <Compile Include="Drawables\Menu\EDropDown.cs"/>
+    <Compile Include="Drawables\Menu\EDropDownItem.cs"/>
+    <Compile Include="Drawables\Menu\MenuPanel.cs"/>
+    <Compile Include="Drawables\Menu\MenuItem.cs"/>
+    <Compile Include="Drawables\Menu\MenuItemCheckbox.cs"/>
+    <Compile Include="Drawables\Menu\MenuItemRoster.cs"/>
+    <Compile Include="Drawables\Menu\MenuItemSlider.cs"/>
+    <Compile Include="Drawables\Menu\MenuItemValue.cs"/>
+    <Compile Include="Drawables\Menu\MenuItemRadioGroup.cs"/>
+	<Compile Include="Drawables\Menu\MenuItemDualCheckbox.cs"/>
+    <Compile Include="Drawables\Empty.cs"/>
+    <Compile Include="Drawables\Layout\Panel.cs"/>
+    <Compile Include="Drawables\Layout\SplitPanel.cs"/>
+    <Compile Include="Drawables\Layout\Stack.cs"/>
+    <Compile Include="Drawables\Layout\Spacer.cs"/>
+    <Compile Include="EMainEngine.cs"/>
+    <Compile Include="EXNAController.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementFrequency.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementDutyCycle.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementMax.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementMean.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementMin.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementPeakToPeak.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementRMS.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementFallTime.cs"/>
+    <Compile Include="Measurements\Analog\MeasurementRiseTime.cs"/>
+    <Compile Include="Measurements\Measurement.cs"/>
+	<Compile Include="Measurements\MeasurementManager.cs"/>
+	<Compile Include="Measurements\ChannelMeasurementCalculator.cs"/>
+    <Compile Include="Measurements\System\FrameRateCounter.cs"/>
+	<Compile Include="Measurements\System\MeasurementRamUsage.cs"/>
+	<Compile Include="Measurements\System\MeasurementStorageMemorySize.cs"/>
+	<Compile Include="Measurements\System\MeasurementSampleRate.cs"/>
+    <Compile Include="Measurements\System\MeasurementDataSourceFrameRate.cs"/>
+    <Compile Include="Measurements\System\MeasurementXNAFramerate.cs"/>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ScopeDataCollection.cs"/>
+    <Compile Include="Settings.cs"/>
+    <Compile Include="UI\ColorMapper.cs"/>
+    <Compile Include="UI\ColorMapperDark.cs"/>
+    <Compile Include="UI\ColorMapperLight.cs"/>
+    <Compile Include="UI\Scaler.cs"/>
+    <Compile Include="UI\ScalerDefinitions.cs"/>
+    <Compile Include="UI\UIHandler.cs"/>
+    <Compile Include="UI\UIHandlerBuilder.cs"/>
+    <Compile Include="UI\UIHandlerDevice.cs"/>
+    <Compile Include="UI\UIHandlerDialog.cs"/>
+    <Compile Include="UI\UIHandlerGrid.cs"/>
+    <Compile Include="UI\UIHandlerHorizontal.cs"/>
+    <Compile Include="UI\UIHandlerMenu.cs"/>
+    <Compile Include="UI\UIHandlerRecording.cs"/>
+    <Compile Include="UI\UIHandlerUpdate.cs"/>
+    <Compile Include="UI\UIHandlerKeyboard.cs"/>
+	<Compile Include="UI\UIHandlerConfiguration.cs"/>
+    <Compile Include="UI\UICallbacks.cs"/>
+    <Compile Include="UI\UICallbacksAWG.cs"/>
+    <Compile Include="UI\UICallbacksDecoders.cs"/>
+    <Compile Include="UI\UICallbacksTrigger.cs"/>
+    <Compile Include="Utils.cs"/>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\Splash.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\Splash.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\Splash.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\Splash.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Splash.png">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\Styles.xml">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <AndroidResource Include="Resources\xml\device_filter.xml">
+      <Platforms>Android</Platforms>
+    </AndroidResource>
+    <BundleResource Include="Resources\smartscope.icns">
+      <Platforms>MacOS</Platforms>
+    </BundleResource>
+    <Compile Include="Activity.cs">
+      <Platforms>Android</Platforms>
+    </Compile>
+    <Compile Include="Program.cs">
+      <ExcludePlatforms>Android</ExcludePlatforms>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludePlatforms>iOS</ExcludePlatforms>
+    </Compile>
+    <Compile Include="SmartScope.cs"/>
+    <Compile Include="CrashLogger.cs"/>
+    <Content Include="smartscope.ico"/>
+    <None Include="smartscope.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Platforms>Linux</Platforms>
+    </None>
+    <None Include="app.config">
+      <ExcludePlatforms>iOS</ExcludePlatforms>
+    </None>
+    <None Include="Info.iOS.plist">
+      <Link>Info.plist</Link>
+      <Platforms>iOS</Platforms>
+    </None>
+    <None Include="Info.MacOS.plist">
+      <Link>Info.plist</Link>
+      <Platforms>MacOS</Platforms>
+    </None>
+    <None Include="Properties\AndroidManifest.xml">
+      <Platforms>Android</Platforms>
+    </None>
+    <Compile Include="FormMainMemories.cs">
+      <SubType>Form</SubType>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </Compile>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </EmbeddedResource>
+    <Compile Include="FormLog.cs">
+      <SubType>Form</SubType>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </Compile>
+    <Compile Include="FormLog.Designer.cs">
+      <DependentUpon>FormLog.cs</DependentUpon>
+      <Platforms>Windows,WindowsGL</Platforms>
+    </Compile>
+    <BundleResource Include="DeviceInterface\libs\LibUsbDotNet\libusb-1.0.0.dylib">
+      <Link>libusb-1.0.0.dylib</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Platforms>MacOS</Platforms>
+    </BundleResource>
+    <BundleResource Include="MonoGame\ThirdParty\Dependencies\SDL\MacOS\Universal\libSDL2-2.0.0.dylib">
+      <Link>libSDL2-2.0.0.dylib</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Platforms>MacOS</Platforms>
+    </BundleResource>
+
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-settings@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-settings@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-appicon@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-spotlight@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-appicon@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-settings@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-pro-appicon@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-oldAppicon@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-notification@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-spotlight@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-spotlight@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-oldAppicon@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-oldSpotlight@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-notification@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-appicon@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-oldSpotlight@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-notification@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-appicon@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-oldAppicon@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-notification@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-oldAppicon@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-spotlight@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ios-marketing.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iphone-settings@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ipad-settings@2x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape%402x.png" />
+
+  </Files>
+
+</Project>

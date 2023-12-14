@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentProject Name="ESuiteContent">
+  <Source Include="Content_work" Match="*.png" />
+  <Source Include="Content_work" Match="*.xnb" />
+</ContentProject>

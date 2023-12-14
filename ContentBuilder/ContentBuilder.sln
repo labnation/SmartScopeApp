@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentBuilder", "ContentBuilder.csproj", "{0067B863-5BD8-455A-84BD-93803517F679}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0067B863-5BD8-455A-84BD-93803517F679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0067B863-5BD8-455A-84BD-93803517F679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0067B863-5BD8-455A-84BD-93803517F679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0067B863-5BD8-455A-84BD-93803517F679}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

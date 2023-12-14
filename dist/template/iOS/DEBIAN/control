@@ -1,0 +1,10 @@
+Package: com.lab-nation.smartscope
+Name: SmartScope 
+Version: VersionPlaceHolder
+Architecture: iphoneos-arm
+Description: LabNation SmartScope app 
+Homepage: http://www.lab-nation.com/
+Maintainer: LabNation <info@lab-nation.com>
+Author: LabNation <info@lab-nation.com>
+Section: Development 
+Depends: mobilesubstrate

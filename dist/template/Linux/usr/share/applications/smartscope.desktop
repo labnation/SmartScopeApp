@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=
+Terminal=false
+Name=SmartScope
+Exec=mono /opt/smartscope/SmartScope.exe
+Type=Application
+Categories=Science;Education;Math;
+Icon=/opt/smartscope/smartscope.ico

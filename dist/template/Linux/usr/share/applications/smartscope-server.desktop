@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=
+Terminal=false
+Name=SmartScope Server
+Exec=mono /opt/smartscope/SmartScopeServerUI.exe
+Type=Application
+Categories=Science;Education;Math;
+Icon=/opt/smartscope/smartscopeserver.ico
