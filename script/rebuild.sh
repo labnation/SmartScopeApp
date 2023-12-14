@@ -178,6 +178,15 @@ if [ $DONUGET = true ]; then
 ${CMD_PREFIX}.nuget/NuGet.exe restore SmartScope.$OPSYS.sln
 fi
 
+## Workaround nuget not restoring DeviceInterface modules
+if [ $OPSYS = "Windows" ] ||
+   [ $OPSYS = "Linux" ] ||
+   [ $OPSYS = "MacOS" ]; then
+  cd DeviceInterface
+  ./bootstrap.sh $OPSYS
+  cd "${ROOT}"
+fi
+
 # Make sure the deploy directory exists
 if [ ! -d ${DISTRIBUTION_DIR} ]; then
   echo Creating distribution directory ${DISTRIBUTION_DIR}
